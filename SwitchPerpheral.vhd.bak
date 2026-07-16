@@ -3,7 +3,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 
-ENTITY Labproject IS
+ENTITY SwitchPerpheral IS
     PORT(
         RESETN     : IN  STD_LOGIC;
         CLOCK      : IN  STD_LOGIC;
@@ -13,9 +13,9 @@ ENTITY Labproject IS
         IO_WRITE   : IN  STD_LOGIC;
         IO_DATA    : INOUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
-END Labproject;
+END SwitchPerpheral;
 
-ARCHITECTURE draft OF Labproject IS
+ARCHITECTURE And_Queue OF SwitchPerpheral IS
     SIGNAL CHIP_SELECT : STD_LOGIC;
     SIGNAL MASK        : STD_LOGIC_VECTOR(15 DOWNTO 0);
 BEGIN
@@ -39,4 +39,4 @@ BEGIN
     IO_DATA <= EXT_WIRES AND MASK WHEN (CHIP_SELECT = '1' AND IO_READ = '1')
                ELSE (OTHERS => 'Z');
 
-END draft;
+END And_Queue;
