@@ -108,11 +108,7 @@ BEGIN
         END IF;
     END PROCESS;
  
-    ------------------------------------------------------------------
-    -- DEQUEUE process: owns HEAD.
-    -- The pop happens when the read strobe ends, so the value driven
-    -- onto IO_DATA stays stable for the whole IN cycle.
-    ------------------------------------------------------------------
+    --Dequeue logic
     DEQ_READ <= CSEL_DEQ AND IO_READ;
  
     PROCESS(CLOCK, RESETN)
