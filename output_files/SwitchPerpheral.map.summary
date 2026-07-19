@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Jul 19 13:17:58 2026
+Analysis & Synthesis Status : Successful - Sun Jul 19 18:38:10 2026
 Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 Revision Name : SwitchPerpheral
 Top-level Entity Name : SwitchPerpheral
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 16
+Total registers : 186
 Total pins : 47
 Total virtual pins : 0
 Total block memory bits : 0

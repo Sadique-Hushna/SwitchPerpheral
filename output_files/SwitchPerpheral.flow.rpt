@@ -1,5 +1,5 @@
 Flow report for SwitchPerpheral
-Sun Jul 19 13:17:58 2026
+Sun Jul 19 18:39:06 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Sun Jul 19 13:17:58 2026           ;
+; Flow Status                     ; Successful - Sun Jul 19 18:39:06 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; SwitchPerpheral                                 ;
 ; Top-level Entity Name           ; SwitchPerpheral                                 ;
@@ -49,7 +49,7 @@ on the Quartus Prime software download page.
 ; Device                          ; 5CGXFC7C7F23C8                                  ;
 ; Timing Models                   ; Final                                           ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 16                                              ;
+; Total registers                 ; 186                                             ;
 ; Total pins                      ; 47                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
@@ -68,7 +68,7 @@ on the Quartus Prime software download page.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/19/2026 13:17:53 ;
+; Start date & time ; 07/19/2026 18:38:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SwitchPerpheral     ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ on the Quartus Prime software download page.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 71120905716051.178448147313272         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 71120905716051.178450068547400         ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -92,7 +92,11 @@ on the Quartus Prime software download page.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4945 MB             ; 00:00:11                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4969 MB             ; 00:00:11                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4747 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4763 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4747 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4763 MB             ; 00:00:00                           ;
 ; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
@@ -103,6 +107,10 @@ on the Quartus Prime software download page.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; IonKnow          ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IonKnow          ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IonKnow          ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IonKnow          ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; IonKnow          ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -110,6 +118,10 @@ on the Quartus Prime software download page.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SwitchPerpheral -c SwitchPerpheral
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SwitchPerpheral -c SwitchPerpheral --vector_source=C:/Users/sadiq/SwitchPerpheral/Waveform1.vwf --testbench_file=C:/Users/sadiq/SwitchPerpheral/simulation/qsim/Waveform1.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/sadiq/SwitchPerpheral/simulation/qsim/ SwitchPerpheral -c SwitchPerpheral
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SwitchPerpheral -c SwitchPerpheral --vector_source=C:/Users/sadiq/SwitchPerpheral/Waveform1.vwf --testbench_file=C:/Users/sadiq/SwitchPerpheral/simulation/qsim/Waveform1.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/sadiq/SwitchPerpheral/simulation/qsim/ SwitchPerpheral -c SwitchPerpheral
 
 
 
