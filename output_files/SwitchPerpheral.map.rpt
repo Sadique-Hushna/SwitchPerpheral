@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SwitchPerpheral
-Sun Jul 19 13:17:58 2026
+Sun Jul 19 18:38:10 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -14,9 +14,10 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +44,13 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jul 19 13:17:58 2026           ;
+; Analysis & Synthesis Status     ; Successful - Sun Jul 19 18:38:10 2026           ;
 ; Quartus Prime Version           ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                   ; SwitchPerpheral                                 ;
 ; Top-level Entity Name           ; SwitchPerpheral                                 ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 16                                              ;
+; Total registers                 ; 186                                             ;
 ; Total pins                      ; 47                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
@@ -159,10 +160,11 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -175,31 +177,31 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
 
 
-+----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary              ;
-+---------------------------------------------+------------+
-; Resource                                    ; Usage      ;
-+---------------------------------------------+------------+
-; Estimate of Logic utilization (ALMs needed) ; 13         ;
-;                                             ;            ;
-; Combinational ALUT usage for logic          ; 20         ;
-;     -- 7 input functions                    ; 0          ;
-;     -- 6 input functions                    ; 0          ;
-;     -- 5 input functions                    ; 3          ;
-;     -- 4 input functions                    ; 1          ;
-;     -- <=3 input functions                  ; 16         ;
-;                                             ;            ;
-; Dedicated logic registers                   ; 16         ;
-;                                             ;            ;
-; I/O pins                                    ; 47         ;
-;                                             ;            ;
-; Total DSP Blocks                            ; 0          ;
-;                                             ;            ;
-; Maximum fan-out node                        ; IO_DATA~33 ;
-; Maximum fan-out                             ; 16         ;
-; Total fan-out                               ; 210        ;
-; Average fan-out                             ; 1.44       ;
-+---------------------------------------------+------------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimate of Logic utilization (ALMs needed) ; 160         ;
+;                                             ;             ;
+; Combinational ALUT usage for logic          ; 150         ;
+;     -- 7 input functions                    ; 0           ;
+;     -- 6 input functions                    ; 98          ;
+;     -- 5 input functions                    ; 39          ;
+;     -- 4 input functions                    ; 3           ;
+;     -- <=3 input functions                  ; 10          ;
+;                                             ;             ;
+; Dedicated logic registers                   ; 186         ;
+;                                             ;             ;
+; I/O pins                                    ; 47          ;
+;                                             ;             ;
+; Total DSP Blocks                            ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; CLOCK~input ;
+; Maximum fan-out                             ; 186         ;
+; Total fan-out                               ; 1649        ;
+; Average fan-out                             ; 3.70        ;
++---------------------------------------------+-------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,7 +209,7 @@ on the Quartus Prime software download page.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name     ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
-; |SwitchPerpheral           ; 20 (20)             ; 16 (16)                   ; 0                 ; 0          ; 47   ; 0            ; |SwitchPerpheral    ; SwitchPerpheral ; work         ;
+; |SwitchPerpheral           ; 150 (150)           ; 186 (186)                 ; 0                 ; 0          ; 47   ; 0            ; |SwitchPerpheral    ; SwitchPerpheral ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -217,14 +219,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16    ;
+; Total registers                              ; 186   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 16    ;
+; Number of registers using Asynchronous Clear ; 186   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 178   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 9:1                ; 16 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; No         ; |SwitchPerpheral|FRONT[4]    ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |SwitchPerpheral|IO_DATA[10] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
 
 
 +-----------------------------------------------------+
@@ -232,18 +244,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 16                          ;
-;     ENA CLR           ; 16                          ;
+; arriav_ff             ; 186                         ;
+;     CLR               ; 8                           ;
+;     ENA CLR           ; 178                         ;
 ; arriav_io_obuf        ; 16                          ;
-; arriav_lcell_comb     ; 20                          ;
-;     normal            ; 20                          ;
-;         2 data inputs ; 16                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 3                           ;
+; arriav_lcell_comb     ; 150                         ;
+;     normal            ; 146                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 39                          ;
+;         6 data inputs ; 98                          ;
+;     shared            ; 4                           ;
+;         2 data inputs ; 4                           ;
 ; boundary_port         ; 47                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 0.79                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.64                        ;
 +-----------------------+-----------------------------+
 
 
@@ -262,28 +280,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sun Jul 19 13:17:52 2026
+    Info: Processing started: Sun Jul 19 18:38:05 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SwitchPerpheral -c SwitchPerpheral
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
-Info (12021): Found 4 design units, including 1 entities, in source file switchperpheral.vhd
-    Info (12022): Found design unit 1: SwitchPerpheral-And_Queue File: C:/Users/sadiq/SwitchPerpheral/SwitchPerpheral.vhd Line: 18
-    Info (12022): Found design unit 2: SwitchPerpheral-Or_Queue File: C:/Users/sadiq/SwitchPerpheral/SwitchPerpheral.vhd Line: 42
-    Info (12022): Found design unit 3: SwitchPerpheral-Xor_Queue File: C:/Users/sadiq/SwitchPerpheral/SwitchPerpheral.vhd Line: 67
-    Info (12023): Found entity 1: SwitchPerpheral File: C:/Users/sadiq/SwitchPerpheral/SwitchPerpheral.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file switchperpheral.vhd
+    Info (12022): Found design unit 1: SwitchPerpheral-Masked_Queue File: C:/Users/sadiq/SwitchPerpheral/SwitchPerpheral.vhd Line: 17
+    Info (12023): Found entity 1: SwitchPerpheral File: C:/Users/sadiq/SwitchPerpheral/SwitchPerpheral.vhd Line: 5
 Info (12127): Elaborating entity "SwitchPerpheral" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 83 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 375 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 31 input pins
     Info (21059): Implemented 0 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 36 logic cells
+    Info (21061): Implemented 328 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4945 megabytes
-    Info: Processing ended: Sun Jul 19 13:17:58 2026
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 4969 megabytes
+    Info: Processing ended: Sun Jul 19 18:38:10 2026
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:11
 
 
